@@ -1,91 +1,11 @@
-
-
 import streamlit as st
 import pandas as pd
 from io import BytesIO
 import time
 import base64
 
-# Adding custom CSS for styling
-st.markdown("""
-    <style>
-    body {
-        background-color: #f4f8fb; /* Light Gray background */
-        color: #2c3e50;  /* Dark text color */
-        font-family: 'Arial', sans-serif;
-        padding: 20px;
-    }
-
-    /* Title and Section Headers */
-    h1, h2, h3, h4, h5, h6 {
-        color: #2c3e50;
-        font-weight: 700;
-        text-align: center;
-    }
-
-    /* Button Styling */
-    .stButton>button {
-        background-color: #9b59b6;  /* Soft Purple */
-        color: white;
-        font-size: 18px;
-        font-weight: 600;
-        padding: 14px 28px;
-        border-radius: 50px; /* More rounded */
-        border: none;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .stButton>button:hover {
-        background-color: #8e44ad;  /* Darker Purple on hover */
-        transform: translateY(-3px);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    }
-
-    .stButton>button:active {
-        background-color: #7d3c8c;  /* Even darker Purple when active */
-        transform: translateY(2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Input Fields */
-    .stTextInput>div>input,
-    .stSelectbox>div>select,
-    .stRadio>div>label {
-        padding: 12px 18px;
-        font-size: 16px;
-        border-radius: 10px;
-        border: 2px solid #9b59b6;  /* Soft Purple border */
-        background-color: #ffffff;
-        color: #2c3e50;
-        width: 100%;
-        margin: 10px 0;
-        transition: border-color 0.3s ease;
-    }
-
-    .stTextInput>div>input:focus,
-    .stSelectbox>div>select:focus {
-        border-color: #8e44ad;  /* Darker Purple when focused */
-        box-shadow: 0 0 5px rgba(142, 68, 173, 0.4);  /* Light purple glow */
-    }
-
-    /* Download Button Styling */
-    .download-btn {
-        background: #003366;  /* Blue background */
-        color: #ffffff;  /* White text color */
-        padding: 14px 28px;
-        border-radius: 50px;
-        border: none;
-        font-size: 18px;
-        cursor: pointer;
-        display: inline-block;
-        margin-top: 20px;
-        transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-        text-align: center;
-    }
-    </style>
-""", unsafe_allow_html=True)
+# Enable Wide Mode
+st.set_page_config(layout="wide")
 
 # App Title
 st.title("CleanConvert Pro")
